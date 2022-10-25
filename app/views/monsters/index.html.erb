@@ -1,1 +1,27 @@
-<%# Update me %><%= @monsters.inspect %>
+<h1>Tabla de monstruos</h1>  
+<h1>Lista de tweets</h1>
+    
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <b> Nombre </b>
+    </div>
+    <div class="col-sm">
+      <b> Descripcion </b>
+    </div>
+  </div>
+  
+  <% @monsters.each do |monster| %>
+    <div class="row">
+        <div class="col-sm"><%= link_to monster.name, monster %>   </div> 
+        <div class="col-sm"> 
+        <% if monster.tweets.count > 1 %>
+            <div class="twittero"> Twittero Destacado </div>
+        <% end %>
+       <%= monster.description %> 
+       </div>
+    </div>
+  <% end %>
+  </div>
